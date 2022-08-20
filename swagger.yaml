@@ -1,0 +1,75 @@
+tags:
+- name: keyValues
+  description: keyValues API
+
+paths:
+# [GET] getAllKeys
+  /cache/getAllKeys:
+    get:
+      tags:
+      - keyValues
+      summary: get All keys
+
+# [GET] getByKey
+  cache/getByKey/{key}:
+    get:
+      tags:
+      - keyValues
+      summary: get All keys
+      parameters:
+      - name: id
+        in: path
+        description: key
+        required: true
+
+
+# [PUT] updateByKey
+  cache/updateByKey/{key}:
+
+    post:
+      tags:
+      - keyValues
+      summary: Update By Key
+      parameters:
+      - name: id
+        in: path
+        description: key Id
+        required: true
+      - name: value
+        in: body
+        description: value
+        required: true
+
+# [DELETE] deleteByKey
+  cache/deleteByKey/{id}:
+    get:
+      tags:
+      - keyValues
+      summary: Delete By Key
+      parameters:
+      - name: id
+        in: path
+        description: Key Id
+        required: true
+
+# [DELETE] resetKeys
+  cache/resetKeys/{id}:
+    get:
+      tags:
+      - keyValues
+      summary: Reset Cache
+      parameters:
+      - name: id
+        in: path
+        description: key Id
+        required: true
+
+# definitions
+definitions:
+  value:
+    type: string
+
+
+schemes:
+ - https
+ - http
